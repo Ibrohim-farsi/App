@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#f9f9fb",
+                "on-tertiary-container": "#fcfaff",
+                "on-primary-fixed-variant": "#00458f",
+                "primary-fixed-dim": "#abc7ff",
+                "background": "#f9f9fb",
+                "tertiary-container": "#737378",
+                "surface-bright": "#f9f9fb",
+                "on-primary": "#ffffff",
+                "surface-container": "#eeeef0",
+                "on-surface-variant": "#414753",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed-dim": "#c8c6c8",
+                "surface-container-low": "#f3f3f5",
+                "outline": "#717785",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "surface-variant": "#e2e2e4",
+                "outline-variant": "#c1c6d6",
+                "inverse-surface": "#2f3132",
+                "on-surface": "#1a1c1d",
+                "tertiary": "#5a5b5f",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "secondary-container": "#e2dfe1",
+                "tertiary-fixed-dim": "#c7c6cb",
+                "on-primary-fixed": "#001b3f",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#474649",
+                "secondary": "#5f5e60",
+                "on-tertiary-fixed-variant": "#46464b",
+                "inverse-on-surface": "#f0f0f2",
+                "inverse-primary": "#abc7ff",
+                "on-primary-container": "#fcfbff",
+                "primary-fixed": "#d7e2ff",
+                "tertiary-fixed": "#e3e2e7",
+                "primary-container": "#0071e3",
+                "on-background": "#1a1c1d",
+                "secondary-fixed": "#e4e2e4",
+                "error-container": "#ffdad6",
+                "surface-dim": "#d9dadc",
+                "surface-tint": "#005cbb"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Inter", "sans-serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9fb;
+        }
+        .video-card-gradient {
+            background: linear-gradient(to bottom, transparent 0%, rgba(26, 28, 29, 0.6) 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9fb]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Профиль пользователя" class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a friendly expression, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuToSWVR_yZ2oIES7aP_1r2QILRMQM-GaZIIV6litXaWzofFMkW9RBMCp9_4QDl2Z2nxR9q8JqTlbCP_WSVeyC1k-7sDXYCo-K5xWgk4lR0rCT_Wm_0cm5qUHn1QRwdUSN9pckJX4Ijyl-ylRM3xh49JlLpgzS22TNDNGIIFA0GCnRNwYO_HY1oY74Na2Vs66bvIiGHKMz8GB_x8Hsi9NnS5LcImYqLYPyuQDTcalChAXkEOZzII2PFjPxPPVQ5APdY-lS4eiGlOLg"/>
+</div>
+<span class="text-xl font-bold text-[#1a1c1d] tracking-tight">Mastodon Hub</span>
+</div>
+<button class="text-[#0059b5] hover:opacity-70 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10">
+<h1 class="text-[2.0rem] font-bold text-on-surface leading-tight tracking-tight mb-8">Мои видео</h1>
+<!-- Horizontal Categories -->
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-full text-sm font-medium transition-all whitespace-nowrap">Все видео</button>
+<button class="px-6 py-2.5 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full text-sm font-medium transition-all whitespace-nowrap">Избранное</button>
+<button class="px-6 py-2.5 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full text-sm font-medium transition-all whitespace-nowrap">Технологии</button>
+<button class="px-6 py-2.5 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full text-sm font-medium transition-all whitespace-nowrap">Образование</button>
+<button class="px-6 py-2.5 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full text-sm font-medium transition-all whitespace-nowrap">Дизайн</button>
+</div>
+</div>
+<!-- Bento Grid Video Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Large Feature Video Card -->
+<div class="md:col-span-2 lg:col-span-2 aspect-video relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Main Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="high-end minimalist workspace with a sleek laptop showing code, soft morning light hitting the desk surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqxO1_eQybVRmbI0cYY2eBblK5Du4PxyRQS4qq1AINenp1Ht629OrSFV6pCLDZUeHI_cZz9lOSmRtrLMlI8RJfZMFqyarGmYWu4RBCTWsnIzLnMT19cWIazifTE96b3hN1WNfYNu2Mk9-NF8DK2iB3cys0gC0Qs0e95ib06aBoRjWzr7usE4sDZlbsLCeqMALSLFUD0FEHSSX87tjtQ2dCT-pf6Ca6pU3sSagav73J8quQTDy48y38AYuACbhw12VIeNerCkiInUUA"/>
+<div class="absolute inset-0 video-card-gradient"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white">
+<span class="material-symbols-outlined text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase tracking-wider rounded-md mb-3 inline-block">Новое</span>
+<h3 class="text-white text-xl font-bold mb-1">Будущее веб-разработки: Обзор 2024</h3>
+<p class="text-white/80 text-sm">12:45 • 2.4к просмотров</p>
+</div>
+</div>
+<!-- Standard Video Card -->
+<div class="aspect-[4/5] relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Tech Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="vintage aesthetic collection of retro computers and gaming consoles on a wooden shelf, warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGx0yveXlMKdz4L0kJdfkwCpXhfrtfKnFus5br-GjZC8w0km8KfT1c9zJltmDnDs5uR6PoTnHvtkpWuy9KGEkxzY0WTLE3IvilFvpI3Wwc0P2QDnUqKZvedLq4en7yec5jMUyQr8eTqzn3XSWu3MvHb4q4AUXdDYL-id6C9IdTLU1BKmvxNVwjpzgSgJYtk-z2-eQHx1nRvmPpd7pqf4WZvViYDJJOr9XE0sglbFmYl_Stzc_Zetw1GTzCMqzLy0zr30aUHQr6C3q"/>
+<div class="absolute inset-0 video-card-gradient"></div>
+<div class="absolute top-4 right-4">
+<div class="w-8 h-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-white text-lg font-bold mb-1 leading-tight">История ретро-ПК</h3>
+<p class="text-white/80 text-xs uppercase tracking-widest font-medium">Ностальгия</p>
+</div>
+</div>
+<!-- More Grid Items -->
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Design Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="clean architectural lines of a modern concrete building against a clear blue sky, minimalist composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtcTr7_CWWHfv4aBru83Mpel91KLV2AHhO1JB8UKVQJuBa3MHKgywM3ZCuQhLJLvRQLyA3s11JhZJ5OZUMooOpdivG_vhy3D3NVI8Ob8GO1567itMxH_eFQ8r8vTqCsM_PvxnK4mfNAVwO86-Lf6uTBvV9jrOQBuFDcR1ptX4N7DspVLxh6dQfrTt79h7ZOkzziyXXjE70L1qeJtqC6UCTbqyqRHlb-p-mT0jIXaUpJIXBnec42iG8xsr0XVvlvjLtaoDb-qWd-3ml"/>
+<div class="absolute inset-0 video-card-gradient"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/50 text-5xl group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-white font-bold">Минимализм в дизайне</h3>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Data Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="abstract visualization of digital data points and connections glowing in deep blue neon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASnk-C-4JxumdM_vgHfM_UQKCIpvtD6o8xkn2CSLO3RO4-hrJigAuwdKwonhNBD22maSyc-oetITHxwOiDWX-g94fE1PT00AUOi7DcHGkYeCrUXBXdUtycnB63obuOlND_064LHfoZsvfyS4fOXWjB_XV7rP16RLC7UpWq-zfYuRIG2MT0RWmOl1pcNFic3xXXcaS1mMiEt1BBvXdyvW88qb9TptiJLJoxIulGdUuGEYw7o-aqIf5NK754O94nUh4oo55iCXHGtjyg"/>
+<div class="absolute inset-0 video-card-gradient"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-white font-bold">Анализ данных 101</h3>
+<p class="text-white/70 text-xs">15:00</p>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Coding Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up of clean code on a computer screen in a dark room with subtle purple glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJu3bYZBSQzUqPZES-NFgJTlS619EdWikz6luCQzwLWy5SREGtBlLQst3tpxLB4d_JMzsdEOK8cgGEWB-cKrrN0KCbokG2_3dzPOaL6MbFm8NOHpJViVz4UVzaxWVw5FLiBqlmXmfjp-GyKEwL4VxyYHsTmPfk793JOsBwq9soRCrREHlxbe9JaifZ6XxKILqmUpi1EN6fVDPPjASsMqtG71tkFNpI555ee-K6JO3f7-MCZnPfHi8VuIBAHr-2hzKCSzsSyS-ZXEX5"/>
+<div class="absolute inset-0 video-card-gradient"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-white font-bold">Оптимизация React</h3>
+<p class="text-white/70 text-xs">08:20</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#f9f9fb]/80 backdrop-blur-xl pb-safe">
+<div class="flex justify-around items-center h-20 w-full px-8 max-w-lg mx-auto">
+<!-- News Tab -->
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="newspaper">newspaper</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider">Новости</span>
+</a>
+<!-- Video Tab (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-[#0059b5] scale-110 transition-all active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider">Видео</span>
+</a>
+<!-- Forum Tab -->
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="forum">forum</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider">Форум</span>
+</a>
+</div>
+</nav>
+<!-- Custom Style for hide scrollbar -->
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</body></html>

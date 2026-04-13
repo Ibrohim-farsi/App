@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9fb",
+                    "on-tertiary-container": "#fcfaff",
+                    "on-primary-fixed-variant": "#00458f",
+                    "primary-fixed-dim": "#abc7ff",
+                    "background": "#f9f9fb",
+                    "tertiary-container": "#737378",
+                    "surface-bright": "#f9f9fb",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeeef0",
+                    "on-surface-variant": "#414753",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "surface-container-low": "#f3f3f5",
+                    "outline": "#717785",
+                    "surface-container-high": "#e8e8ea",
+                    "surface-container-highest": "#e2e2e4",
+                    "primary": "#0059b5",
+                    "on-secondary-container": "#636264",
+                    "on-tertiary-fixed": "#1a1b1f",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e4",
+                    "outline-variant": "#c1c6d6",
+                    "inverse-surface": "#2f3132",
+                    "on-surface": "#1a1c1d",
+                    "tertiary": "#5a5b5f",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#e2dfe1",
+                    "tertiary-fixed-dim": "#c7c6cb",
+                    "on-primary-fixed": "#001b3f",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#474649",
+                    "secondary": "#5f5e60",
+                    "on-tertiary-fixed-variant": "#46464b",
+                    "inverse-on-surface": "#f0f0f2",
+                    "inverse-primary": "#abc7ff",
+                    "on-primary-container": "#fcfbff",
+                    "primary-fixed": "#d7e2ff",
+                    "tertiary-fixed": "#e3e2e7",
+                    "primary-container": "#0071e3",
+                    "on-background": "#1a1c1d",
+                    "secondary-fixed": "#e4e2e4",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9dadc",
+                    "surface-tint": "#005cbb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter", "SF Pro Display", "system-ui"],
+                    "body": ["Inter", "SF Pro Text", "system-ui"],
+                    "label": ["Inter", "SF Pro Text", "system-ui"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-transition {
+            transition: background-color 0.3s ease;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close-up studio portrait of a professional man with friendly expression, soft cinematic lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvmlhclpTq7t1za6qzfph0sN4S58mHw-PXfsrhQD-_8kpKfzyOgog99ggkNi5o_gETX2NgvWclAAuFZH_8symFp2tEH5cyiQrA2eQLoEy3lCAJzaSxpCRyhP0aZNOQSylv6lLboVpkU5LCISGnAoxC1QKeK_4qiKTYoaXaxNMusN3FwO2l91PlkBer9dbtXO3tS6B9oFgaHv3ANWnFuLOWGwwDkQtU5__2gIp9e3hJnHiKTdeGrklN1n6qzVpzqzIiG-D6-B09ceL"/>
+</div>
+<span class="text-xl font-bold text-[#1a1c1d] dark:text-white font-['SF_Pro_Display'] tracking-tight">Mastodon Hub</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:opacity-70 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<!-- Editorial Header Section -->
+<div class="mb-12">
+<h1 class="text-[2.0rem] font-bold text-on-surface font-['SF_Pro_Display'] tracking-tight mb-2">Форум</h1>
+<p class="text-on-surface-variant body-lg opacity-70">Обсуждения, вопросы и обмен опытом в сообществе.</p>
+</div>
+<!-- Action Section: Bento-style Quick Post -->
+<div class="mb-10 bg-surface-container-low rounded-[1.5rem] p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+</div>
+<div>
+<h3 class="text-lg font-bold">Есть вопрос?</h3>
+<p class="text-sm text-on-surface-variant opacity-80">Получите ответ от экспертов Mastodon</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-8 py-3.5 rounded-full font-bold text-sm transition-transform active:scale-95 shadow-sm">
+                Задать вопрос
+            </button>
+</div>
+<!-- Forum Threads List -->
+<div class="space-y-4">
+<div class="flex items-center justify-between px-2 mb-4">
+<h2 class="label-md font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Последние темы</h2>
+<button class="text-primary text-sm font-medium">Показать все</button>
+</div>
+<!-- Thread Card 1 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] p-5 hover:bg-white transition-all cursor-pointer">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Технологии</span>
+<span class="text-xs text-on-surface-variant opacity-50">2 часа назад</span>
+</div>
+<h3 class="text-[1.375rem] font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors">Как настроить собственный сервер Mastodon на Raspberry Pi 5?</h3>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Portrait of a young creative professional with glasses, bright studio lighting, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3CkFIveCZuGrPfR9zNewgYqgePDojqs5O6ken42MlJ4mnrGA1nJfZIbsdIuDnnVMUTbZjbEQ6L3JI77bxua-Gyiw5nYNdLd38eG5kbrzo6hbxxGcNc7QXnHJgeUp5FRUOMSPl7T_MnR0_o_qeaJXyR0SdStSDRAnNEeM_Cw2VmLO-k_R7inVI-LZ6qy63loEJU-z6XIOcHSZOUU1Je6D-v0wbvydFU0Ci4GFRhbJD5lwaXzvse12VHccLeud9vXV9ULTJemn9MHvq"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Александр Волков</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-sm font-bold">24</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Thread Card 2 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] p-5 hover:bg-white transition-all cursor-pointer">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Безопасность</span>
+<span class="text-xs text-on-surface-variant opacity-50">5 часов назад</span>
+</div>
+<h3 class="text-[1.375rem] font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors">Лучшие практики для защиты личных данных в децентрализованных сетях</h3>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Modern professional woman smiling, outdoor city background with soft bokeh, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88KxvTQfjC8FQIsbQ9WAzf5XuF_HiF1C6lIOoGabm93tSafS9MU7YaPq5jNIibJSP70wKBbquwBYjI7-vytkZMsZxCWzLH5Nh1g1uXW0CdzrOUlYXYDXtG8kRR6YNpBDvHgIZqKE4Ao64tfpOMfbixByoBCaA2FHD1xqvZPBwqv3vlQHtMnW6FDVfLqEsYV8yeSDCzG28p7gBix2ULy349qsChmNsBPQ6d0w1aOCULorKKR2ATHk78LOPemBZQvtSy_NqZTqsfOJO"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Елена Смирнова</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-sm font-bold">12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Thread Card 3 (Asymmetric width test) -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] p-5 hover:bg-white transition-all cursor-pointer">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Разработка</span>
+<span class="text-xs text-on-surface-variant opacity-50">Вчера</span>
+</div>
+<h3 class="text-[1.375rem] font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors">Интеграция ActivityPub в существующие веб-приложения на Python</h3>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Portrait of a male developer in a tech office setting, focused expression, cool ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxyzQXz-ljqFUZ9z5HE6swckQEoIkp8C0fqAf8DetNLVLJdLv604YwCr30e2JVJhE8Ui11xer_ezf-XzX_m4OPY7qdMNhRC9khYW13HKaOZGY8fWjtEZKZtVlVQtZQ4qwHyBdI1dl9wCWcwiFpilh4zlosMRXehqsY8R0jAFHFTuEZBfmq5nuk_6qx0U5TCJpN3wW2feyf505UXISsuLy_TTDNBpB-Zs85XOF1enAXMRXKleHm86p-EPODDjrmfvJ6sDXU3__NpDii"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Дмитрий Петров</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-sm font-bold">8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Thread Card 4 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] p-5 hover:bg-white transition-all cursor-pointer">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 bg-surface-container-high rounded-full text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Общее</span>
+<span class="text-xs text-on-surface-variant opacity-50">2 дня назад</span>
+</div>
+<h3 class="text-[1.375rem] font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors">Почему переход на Mastodon — это не просто смена платформы, а смена парадигмы</h3>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Confident woman in a leadership role, clean professional attire, bright office interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCywF2AqzkWXN5S_Z3HHkbgudDXuzAjb7QsAHQwIre0tfgjlOfPEIbJDHlZva3IZJv74A-zr4C3YV9n__TH7pqT0uihzm7zIwSo4vxwcIHuknMS0tx17xUCg_3ZP2dV_NKSS9PnljRxrhJIlJj4VhxJJVpOux3H0tb45dEFz0axJ-aZt2-R78ZS4zXjG36PDCBC4OUMMIj7PlzAGvkxuSkdyIrpNP6JVgqr1RYlADpYAWJ20QGMcLGe8wN47u_Nm3CNhu6p2VX0BkPo"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Мария Кот</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1 text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-sm font-bold">45</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#f9f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-around items-center h-20 w-full px-8">
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="newspaper">newspaper</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Новости</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Видео</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0059b5] dark:text-blue-400 scale-110 transition-all active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Форум</span>
+</a>
+</nav>
+</body></html>
