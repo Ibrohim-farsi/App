@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f9f9fb",
+            "on-tertiary-container": "#fcfaff",
+            "on-primary-fixed-variant": "#00458f",
+            "primary-fixed-dim": "#abc7ff",
+            "background": "#f9f9fb",
+            "tertiary-container": "#737378",
+            "surface-bright": "#f9f9fb",
+            "on-primary": "#ffffff",
+            "surface-container": "#eeeef0",
+            "on-surface-variant": "#414753",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#c8c6c8",
+            "surface-container-low": "#f3f3f5",
+            "outline": "#717785",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e2e2e4",
+            "outline-variant": "#c1c6d6",
+            "inverse-surface": "#2f3132",
+            "on-surface": "#1a1c1d",
+            "tertiary": "#5a5b5f",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "secondary-container": "#e2dfe1",
+            "tertiary-fixed-dim": "#c7c6cb",
+            "on-primary-fixed": "#001b3f",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#474649",
+            "secondary": "#5f5e60",
+            "on-tertiary-fixed-variant": "#46464b",
+            "inverse-on-surface": "#f0f0f2",
+            "inverse-primary": "#abc7ff",
+            "on-primary-container": "#fcfbff",
+            "primary-fixed": "#d7e2ff",
+            "tertiary-fixed": "#e3e2e7",
+            "primary-container": "#0071e3",
+            "on-background": "#1a1c1d",
+            "secondary-fixed": "#e4e2e4",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d9dadc",
+            "surface-tint": "#005cbb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Inter", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-effect {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9fb;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-primary/20">
+  <!-- TopAppBar -->
+  <header
+    class="fixed top-0 w-full z-50 bg-[#f9f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+        <img alt="Профиль пользователя"
+          data-alt="Minimalist abstract portrait of a person in a soft blue and grey digital painting style"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9fYUQWEZCR5Q2fvCRjvX283nBL2AVOIntE7xmlVqBmHqth9F0fqYtpBXajZITI7juf8y0bhlq9nRDt3vmSpjvo-Eu0Csr8MLLgfYhxufYs0zq7nNxNO2s3SBGAgLh9URzkQZ6OazJp4HrbwOGX3lL4kwCY8qs210yFBFDSYaiB6ZfkfxGKhqbON3gLSdXaDIaLMmhdxl8ZaU0Y43o6Rn1RAicmjizQ4SO7iw6P62_lL43uEs4gigaNiQ8cs3u9vTHqiL58awGN5Wd" />
+      </div>
+      <span class="text-xl font-bold text-[#1a1c1d] dark:text-white font-['SF_Pro_Display'] tracking-tight">Mastodon
+        Hub</span>
+    </div>
+    <button class="text-slate-400 hover:opacity-70 transition-opacity active:scale-95 transition-transform">
+      <span class="material-symbols-outlined text-2xl">search</span>
+    </button>
+  </header>
+  <main id="view-news" class="pt-24 pb-32 px-6 max-w-screen-xl mx-auto block">
+    <!-- Section Header -->
+    <div class="mb-10">
+      <span class="text-primary font-semibold text-sm tracking-wider uppercase mb-2 block">Эксклюзив</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Новости нейросетей
+      </h1>
+    </div>
+    <!-- Featured News (Apple-style Bento Grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Main Hero Card -->
+      <article class="md:col-span-8 group cursor-pointer">
+        <div
+          class="relative overflow-hidden rounded-3xl bg-surface-container-low transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+          <div class="aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden">
+            <img alt="AI Concept"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              data-alt="Futuristic neural network visualization with glowing blue nodes and silk-like connecting lines on a dark sophisticated background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNSaCr1hs7j0h28zdvuMuDL18qAxSOfz_AN_4S1vSGCXMG319gQ1x9JdfumltOn3RoG223Xd8mOiGND_ZJxXfu29uB-Ur8sM18fUAAMU7xKoJVuVV83oTBnXPkqidrAzv9jhtPsBsmz0OQL1xBetpE_XBePdxK77tt4tkHepWaAmmIFwjmYmLjkYuWnXRrZsd0PCoTu8TSdgxpMEfVwSQHHLd11iXLcA3kmmdYJ6dakHE_fQqhUpBx-YtpF-rXlp2y7yGzv957UFkT" />
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="flex items-center gap-4 mb-4">
+              <span
+                class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Тренды</span>
+              <span class="text-outline text-xs">5 мин чтения</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-snug group-hover:text-primary transition-colors">Sora
+              меняет правила игры: Как генерация видео от OpenAI трансформирует киноиндустрию</h2>
+            <p class="text-on-surface-variant text-lg mb-6 leading-relaxed max-w-2xl">Новая модель способна создавать
+              фотореалистичные видеоролики по текстовым описаниям, открывая невиданные возможности для креаторов по
+              всему миру.</p>
+            <button
+              class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all active:scale-95">
+              Читать далее
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- Side Cards -->
+      <div class="md:col-span-4 flex flex-col gap-6">
+        <article
+          class="group cursor-pointer bg-surface-container-lowest rounded-3xl p-6 transition-all hover:bg-white hover:shadow-xl hover:shadow-black/5">
+          <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+            <img alt="Robotics"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              data-alt="Close-up of a high-tech robotic hand interacting with a digital interface, soft ambient studio lighting, clean tech aesthetic"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDajS0RqJpHHkusLDGXbWiK420p1WUMGUasjiRxXKyXf_8lMZYXxf-r3yjv8o3a2hdMKa3rlHAkk72dgDfMk9ZyKMV--_bf4rk9X3afLJZqU1SnqEF2zfkmPvLiwc154rAM6l1ABM9cN3tTWQ4qOr2Dmntvn0KCOFcjOnweOWAuFLTeuRmVhbo3J7CDI_ggIwXc0pzQ5eVwnN8pNrszvRwO6P9zQ5v6k-B_H_KT_Qdkqef08N9vw5KUQq-npsoK1aKttHVRXsnf2gex" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">Anthropic
+            представила Claude 3: Новый лидер тестов?</h3>
+          <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Разработчики утверждают, что новая модель
+            превосходит GPT-4 во многих интеллектуальных задачах.</p>
+          <span
+            class="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Подробнее <span class="material-symbols-outlined text-xs">east</span>
+          </span>
+        </article>
+        <article
+          class="group cursor-pointer bg-surface-container-low rounded-3xl p-6 transition-all hover:bg-white hover:shadow-xl hover:shadow-black/5">
+          <div class="flex justify-between items-start mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+            <span class="text-outline text-[10px] font-bold uppercase tracking-tighter">Аналитика</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">Этика ИИ: Где
+            проходит черта в 2024 году?</h3>
+          <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Разбираемся в новых законах и правилах
+            регулирования генеративного контента в Европе и США.</p>
+          <button class="text-on-surface/60 group-hover:text-primary transition-colors text-sm font-medium">Читать 8
+            минут</button>
+        </article>
+      </div>
+    </div>
+    <!-- Secondary Feed -->
+    <section class="mt-16">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="text-2xl font-bold tracking-tight">Свежие материалы</h2>
+        <button class="text-primary font-semibold text-sm hover:underline transition-all">Все новости</button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden mb-5 bg-surface-variant">
+            <img alt="Design AI"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Modern workspace with a laptop screen showing complex AI-generated UI designs, cinematic lighting, shallow depth of field"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEKBBXdYTNWrO0TNsiyChMIGZ0nn0ii2hXOddrNzfZDkp5po4BFyBUKXZwM7AvpGTJxwEon9rqKLhayVKwsSuA8Zah8_lS9K0nbhQ-xcCHp586yDQLvd7l91k3Tx5VzDsvOiiPmJggbmJYRU5mByh0ddbGbr7_dEaZIAiw20jKQsHNbr3EyJYjF3UYG8XDyHmPYASKL-onFlyCfCiIOanop2_HsX6Hzw_GZKFc1J13Q0GUMN-YzCbo57zLT2u3RhnGej_h-B-qtg7c" />
+          </div>
+          <span class="text-outline text-xs font-medium mb-2 block uppercase tracking-widest">Дизайн</span>
+          <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Midjourney v6: Фотореализм
+            выходит на новый уровень</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Улучшенное понимание промптов и невероятная
+            детализация текстур кожи и материалов.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden mb-5 bg-surface-variant">
+            <img alt="Cybersecurity"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Digital representation of data security, abstract shield icon with glowing binary code background in emerald and deep blue"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgl1Nks5AW1mrQcZwwKegEeoy2mXmar7bYzvBQngu4F50iTN-s1pF6ly8ccHu562m2bft4IawxACMwClrkFZ0YeHs5jjfXb36nX0UDTjYRS2eBB87rOFBixujvCYpk3GYyvDYCEG3q5oeq6HBbXkR2yoDspQzwFdJQIvnCGwlKnIQTtjGolHXjUOQE4eh8vTfrVkS16RGwQQb8Iss1BryacbvvCoxkBqiLUUoxlBqupEosLcEg04NO4K9fwomRcIfAbLSmN8ZQJ8pT" />
+          </div>
+          <span class="text-outline text-xs font-medium mb-2 block uppercase tracking-widest">Безопасность</span>
+          <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Как ИИ помогает бороться с
+            фишинговыми атаками</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Алгоритмы обучаются распознавать вредоносные ссылки
+            быстрее, чем их создают злоумышленники.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="group cursor-pointer">  
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden mb-5 bg-surface-variant">
+            <img alt="Chips" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Macro photo of a cutting-edge AI processor chip on a motherboard with neon orange and blue light accents"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVdUyObLXwfzn8tWz1O7DFupxp3FPcYAqcjPP6nzRRIk6lpneU-sjGOc9pidLZ49VW-qY-gF16_gf13mEsg3Vh3WEqg3GK6x_iTLrY1ugO7KqYUUG1gvJDdnYFB-XYdApOU-RFJrV-BepA6JqXltzkvc3IgZGR4S5e7gfqDk5iiKzQkIJVyd270nyi5dXFYc2B_lqEdupWoEeEBxYNDWOP--IEEdEp4OTof1G2tfTJjGTlq1suRKP4LJQXvxZ10NiIodjMsVLziTSg" />
+          </div>
+          <span class="text-outline text-xs font-medium mb-2 block uppercase tracking-widest">Железо</span>
+          <h4 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">NVIDIA Blackwell: Прорыв в
+            вычислениях для обучения ИИ</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Новая архитектура чипов обещает десятикратный прирост
+            производительности в задачах LLM.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="view-video" class="pt-24 pb-32 px-6 max-w-screen-xl mx-auto hidden">
+    <div class="mb-10">
+      <span class="text-primary font-semibold text-sm tracking-wider uppercase mb-2 block">Смотреть</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Видеоуроки и обзоры</h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Video 1 -->
+      <article class="group cursor-pointer">
+        <div class="aspect-video rounded-[2rem] overflow-hidden mb-4 relative bg-surface-variant">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Tech Setup"/>
+          <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+             <div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center backdrop-blur-md">
+                 <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+             </div>
+          </div>
+          <div class="absolute bottom-4 right-4 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md backdrop-blur-md">12:45</div>
+        </div>
+        <h3 class="text-xl font-bold mb-2 leading-tight group-hover:text-primary transition-colors">Как настроить локальную LLM за 10 минут</h3>
+        <p class="text-on-surface-variant text-sm line-clamp-2">Подробное руководство по установке LM Studio и запуске моделей на вашем Mac или PC без видеокарты.</p>
+      </article>
+
+      <!-- Video 2 -->
+      <article class="group cursor-pointer">
+        <div class="aspect-video rounded-[2rem] overflow-hidden mb-4 relative bg-surface-variant">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=60" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Robot Arm"/>
+          <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+             <div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center backdrop-blur-md">
+                 <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+             </div>
+          </div>
+          <div class="absolute bottom-4 right-4 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md backdrop-blur-md">08:20</div>
+        </div>
+        <h3 class="text-xl font-bold mb-2 leading-tight group-hover:text-primary transition-colors">Обзор Figure 01: Гуманоид от OpenAI</h3>
+        <p class="text-on-surface-variant text-sm line-clamp-2">Разбор способностей нового робота-гуманоида, который может вести беседу и понимать визуальный контекст.</p>
+      </article>
+    </div>
+  </main>
+
+  <main id="view-forum" class="pt-24 pb-32 px-6 max-w-screen-xl mx-auto hidden">
+    <div class="mb-10 flex justify-between items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm tracking-wider uppercase mb-2 block">Обсуждения</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Форум</h1>
+        </div>
+        <button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all active:scale-95">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </div>
+
+    <div class="flex flex-col gap-4">
+        <!-- Forum Post 1 -->
+        <article class="bg-surface-container-lowest p-6 rounded-3xl cursor-pointer hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all outline outline-1 outline-outline-variant/30">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">
+                        A
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-on-surface">Alexey Coder</div>
+                        <div class="text-xs text-outline">2 часа назад</div>
+                    </div>
+                </div>
+                <span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-md uppercase">Промпты</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Лучшие системные промпты для написания кода в GPT-4</h3>
+            <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Поделитесь своими наработками! Как лучше всего заставить нейросеть писать чистый и тестируемый код?</p>
+            <div class="flex items-center gap-6 text-sm text-outline font-medium">
+                <div class="flex items-center gap-1 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-lg">thumb_up</span> 24
+                </div>
+                <div class="flex items-center gap-1 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 отв.
+                </div>
+            </div>
+        </article>
+    </div>
+  </main>
+
+  <!-- BottomNavBar -->
+  <nav
+    class="fixed bottom-0 w-full z-50 pb-safe bg-[#f9f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl flex justify-around items-center h-20 w-full px-8 border-t border-outline-variant/20 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+    <!-- Active Tab: Новости -->
+    <a id="nav-news" class="flex flex-col items-center justify-center text-[#0059b5] dark:text-blue-400 scale-110 transition-all"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+      <span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Новости</span>
+    </a>
+    <!-- Inactive Tab: Видео -->
+    <a id="nav-video" class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">play_circle</span>
+      <span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Видео</span>
+    </a>
+    <!-- Inactive Tab: Форум -->
+    <a id="nav-forum" class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:text-[#0059b5] transition-colors active:scale-90 transition-transform"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">forum</span>
+      <span class="font-['SF_Pro_Text'] text-[10px] font-medium uppercase tracking-wider mt-1">Форум</span>
+    </a>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabs = ["news", "video", "forum"];
+        const navBtns = {
+            news: document.getElementById("nav-news"),
+            video: document.getElementById("nav-video"),
+            forum: document.getElementById("nav-forum")
+        };
+        const views = {
+            news: document.getElementById("view-news"),
+            video: document.getElementById("view-video"),
+            forum: document.getElementById("view-forum")
+        };
+
+        function switchTab(activeTab) {
+            tabs.forEach(tab => {
+                if (tab === activeTab) {
+                    views[tab].classList.remove("hidden");
+                    views[tab].classList.add("block");
+                    
+                    const btn = navBtns[tab];
+                    btn.classList.add("text-[#0059b5]", "dark:text-blue-400", "scale-110");
+                    btn.classList.remove("text-slate-400", "opacity-60", "hover:text-[#0059b5]");
+                    btn.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+                } else {
+                    views[tab].classList.add("hidden");
+                    views[tab].classList.remove("block");
+                    
+                    const btn = navBtns[tab];
+                    btn.classList.remove("text-[#0059b5]", "dark:text-blue-400", "scale-110");
+                    btn.classList.add("text-slate-400", "opacity-60", "hover:text-[#0059b5]");
+                    btn.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        tabs.forEach(tab => {
+            navBtns[tab].addEventListener("click", (e) => {
+                e.preventDefault();
+                switchTab(tab);
+            });
+        });
+    });
+  </script>
+</body>
+
+</html>
